@@ -1,0 +1,68 @@
+#primeChecker {
+    float: left;
+    width: 640px;
+    padding: 6px 6px;
+    border: 1px solid #333;
+    background: #eee;
+}
+#judgeNumber {
+    width: 100%;
+    padding: 4px 0;
+    text-align: center;
+    border: 1px solid #030;
+    background: #ded;
+    font-size: 350%;
+    color: #232;
+    word-wrap: break-word;
+}
+#result {
+    width: 100%;
+    padding: 3px 0;
+    text-align: center;
+    border: 1px solid #030;
+    background: #ded;
+    font-size: 160%;
+    color: #232;
+    margin-bottom: 6px;
+}
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+.button {
+    width: calc(100% / 6);
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid #030;
+    background: #777;
+    font-size: 320%;
+    color: #f9fff9;
+}
+.button.gray {
+    background: #888;
+}
+.button.red {
+    background: rgb(204, 125, 125);
+}
+.button.red.judge {
+    width: calc(100% / 3);
+}
+#history {
+    float: left;
+    white-space: nowrap;
+    height: 800px;
+    width: calc(100% - 680px);
+    margin: 0 10px;
+    font-size: 80%;
+}
+#description {
+    float: left;
+    width: 640px;
+    color: #eee;
+}
+@media screen and (max-width: 668px) {
+    #primeChecker {
+        width: calc(100% - 12px);
+        background: #eee;
+    }
+}
