@@ -1,3 +1,9 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
 #primeChecker {
     float: left;
     width: 640px;
@@ -6,7 +12,7 @@
     background: #eee;
 }
 #judgeNumber {
-    width: 100%;
+    width: calc(100% - 2px);
     padding: 4px 0;
     text-align: center;
     border: 1px solid #030;
@@ -16,7 +22,7 @@
     word-wrap: break-word;
 }
 #result {
-    width: 100%;
+    width: calc(100% - 2px);
     padding: 3px 0;
     text-align: center;
     border: 1px solid #030;
@@ -55,14 +61,21 @@
     margin: 0 10px;
     font-size: 80%;
 }
-#description {
-    float: left;
-    width: 640px;
-    color: #eee;
-}
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 700px) {
     #primeChecker {
         width: calc(100% - 12px);
         background: #eee;
+    }
+}
+@media screen and (max-height: 430px) {
+    #judgeNumber {
+        padding: 0;
+    }
+    #result {
+        padding: 0;
+    }
+    .button {
+        font-size: 300%;
+        padding: calc((100vh - 332px) / 6) 0;
     }
 }
