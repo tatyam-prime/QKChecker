@@ -50,8 +50,11 @@ body {
 .button.red {
     background: rgb(204, 125, 125);
 }
-.button.red.judge {
+#buttonJudge {
     width: calc(100% / 3);
+}
+#buttonNone {
+    display: none;
 }
 #history {
     float: left;
@@ -61,10 +64,9 @@ body {
     margin: 0 10px;
     font-size: 80%;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 670px) {
     #primeChecker {
-        width: calc(100% - 12px);
-        background: #eee;
+        width: calc(100% - 14px);
     }
 }
 @media screen and (max-height: 430px) {
@@ -78,4 +80,77 @@ body {
         font-size: 300%;
         padding: calc((100vh - 332px) / 6) 0;
     }
+}
+@media screen and (max-width: 475px) {
+    #primeChecker {
+        width: 100%;
+    }
+    #buttons {
+        flex-direction: column;
+        height: 425px;
+    }
+    .button {
+        width: calc(100% / 4);
+    }
+    #button1 {
+        order: 1;
+    }
+    #button4 {
+        order: 2;
+    }
+    #button7 {
+        order: 3;
+    }
+    #buttonT {
+        order: 4;
+    }
+    #buttonK {
+        order: 5;
+    }
+    #button2 {
+        order: 6;
+    }
+    #button5 {
+        order: 7;
+    }
+    #button8 {
+        order: 8;
+    }
+    #buttonJ {
+        order: 9;
+    }
+    #buttonNone {
+        display: inline;
+        visibility: hidden;
+        order: 10;
+    }
+    #button3 {
+        order: 11;
+    }
+    #button6 {
+        order: 12;
+    }
+    #button9 {
+        order: 13;
+    }
+    #buttonQ {
+        order: 14;
+    }
+    #button0 {
+        order: 15;
+    }
+    #buttonClear {
+        order: 16;
+    }
+    #buttonDelete {
+        order: 17;
+    }
+    #buttonJudge {
+        order: 18;
+        height: 255px;
+        width: calc(100% / 4);
+    }
+}
+@media screen and (max-width: 475px) and (max-height: 430px)  {
+    
 }
