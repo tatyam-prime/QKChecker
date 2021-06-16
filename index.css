@@ -13,23 +13,37 @@ body {
 }
 #judgeNumber {
     width: calc(100% - 2px);
-    padding: 4px 0;
-    text-align: center;
     border: 1px solid #030;
     background: #ded;
-    font-size: 350%;
+}
+#judgeNumber div {
+    display: inline-block;
+    width: 100%;
+    margin: 8px 0;
     color: #232;
+    font-size: 350%;
+    line-height: 66px;
     word-wrap: break-word;
+    text-align: center;
 }
 #result {
+    position: relative;
     width: calc(100% - 2px);
-    padding: 3px 0;
-    text-align: center;
+    height: 39px;
     border: 1px solid #030;
     background: #ded;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
+#result div {
+    position: absolute;
+    top: 50%;
+    -webkit-transform : translateY(-50%);
+    transform : translateY(-50%);
+    width: 100%;
     font-size: 160%;
     color: #232;
-    margin-bottom: 6px;
+    text-align: center;
 }
 #buttons {
     display: flex;
@@ -37,9 +51,10 @@ body {
 }
 .button {
     width: calc(100% / 6);
-    padding: 12px 0;
-    text-align: center;
+    height: 85px;
+    padding: 0;
     border: 1px solid #030;
+    margin: 0;
     background: #777;
     font-size: 320%;
     color: #f9fff9;
@@ -69,27 +84,19 @@ body {
         width: calc(100% - 14px);
     }
 }
-@media screen and (max-height: 430px) {
-    #judgeNumber {
-        padding: 0;
-    }
-    #result {
-        padding: 0;
-    }
+@media screen and (max-height: 418px) {
     .button {
         font-size: 300%;
-        padding: calc((100vh - 332px) / 6) 0;
+        height: calc((100vh - 162px) / 3);
     }
 }
-@media screen and (max-width: 475px) {
-    #primeChecker {
-        width: 100%;
-    }
+@media screen and (max-width: 470px) {
     #buttons {
         flex-direction: column;
-        height: 425px;
+        height: 426px;
     }
     .button {
+        height: calc(100% / 5);
         width: calc(100% / 4);
     }
     #button1 {
@@ -147,10 +154,22 @@ body {
     }
     #buttonJudge {
         order: 18;
-        height: 255px;
+        height: calc(100% / 5 * 3);
         width: calc(100% / 4);
     }
 }
-@media screen and (max-width: 475px) and (max-height: 430px)  {
-    
+@media screen and (max-width: 375px) {
+    .button {
+        font-size: 270%;
+    }
+}
+@media screen and (max-height: 340px) {
+    .button {
+        font-size: 270%;
+    }
+}
+@media screen and (max-width: 475px) and (max-height: 574px)  {
+    #buttons {
+        height: calc(100vh - 158px);
+    }
 }

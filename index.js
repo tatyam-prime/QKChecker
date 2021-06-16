@@ -2,8 +2,8 @@ var bigInt=function(undefined){"use strict";var BASE=1e7,LOG_BASE=7,MAX_INT=9007
 
 let number = "0";
 const judging = [];
-const result = document.getElementById("result");
-const judgeNumber = document.getElementById("judgeNumber");
+const result = document.getElementById("resultText");
+const judgeNumber = document.getElementById("judgeNumberText");
 const history = document.getElementById("history");
 const primeFactorization = new Worker('worker.js');
 judgeNumber.innerHTML = number;
@@ -31,7 +31,7 @@ document.body.addEventListener('keydown', event => {
 
 function update() {
     judgeNumber.innerHTML = number;
-    result.innerHTML = "　";
+    result.innerHTML = "";
 }
 function push(x) {
     if (number === "0") number = "";
