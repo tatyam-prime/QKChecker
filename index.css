@@ -58,6 +58,7 @@ body {
     background: #777;
     font-size: 320%;
     color: #f9fff9;
+    touch-action: manipulation;
 }
 .button.gray {
     background: #888;
@@ -67,9 +68,6 @@ body {
 }
 #buttonJudge {
     width: calc(100% / 3);
-}
-#buttonNone {
-    display: none;
 }
 #history {
     float: left;
@@ -90,86 +88,60 @@ body {
         height: calc((100vh - 162px) / 3);
     }
 }
-@media screen and (max-width: 470px) {
-    #buttons {
-        flex-direction: column;
-        height: 426px;
-    }
-    .button {
-        height: calc(100% / 5);
-        width: calc(100% / 4);
-    }
-    #button1 {
-        order: 1;
-    }
-    #button4 {
-        order: 2;
-    }
-    #button7 {
-        order: 3;
-    }
-    #buttonT {
-        order: 4;
-    }
-    #buttonK {
-        order: 5;
-    }
-    #button2 {
-        order: 6;
-    }
-    #button5 {
-        order: 7;
-    }
-    #button8 {
-        order: 8;
-    }
-    #buttonJ {
-        order: 9;
-    }
-    #buttonNone {
-        display: inline;
-        visibility: hidden;
-        order: 10;
-    }
-    #button3 {
-        order: 11;
-    }
-    #button6 {
-        order: 12;
-    }
-    #button9 {
-        order: 13;
-    }
-    #buttonQ {
-        order: 14;
-    }
-    #button0 {
-        order: 15;
-    }
-    #buttonClear {
-        order: 16;
-    }
-    #buttonDelete {
-        order: 17;
-    }
-    #buttonJudge {
-        order: 18;
-        height: calc(100% / 5 * 3);
-        width: calc(100% / 4);
-    }
-}
-@media screen and (max-width: 375px) {
-    .button {
-        font-size: 270%;
-    }
-}
 @media screen and (max-height: 340px) {
     .button {
         font-size: 270%;
     }
 }
-@media screen and (max-width: 475px) and (max-height: 574px)  {
-    #buttons {
-        height: calc(100vh - 158px);
+/* スマホ縦画面: 4 列のテンキー + 横長の Judge */
+@media screen and (max-width: 470px) {
+    /* 画面の高さに収まるように、はみ出す分はボタンを縮める */
+    #primeChecker {
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 30px);
+        max-height: calc(100dvh - 30px);
+        overflow-y: auto;
     }
+    #judgeNumber, #result {
+        flex-shrink: 0;
+    }
+    #buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, minmax(0, 1fr));
+        grid-template-areas:
+            "b1 b2 b3 ac"
+            "b4 b5 b6 bs"
+            "b7 b8 b9 b0"
+            "bt bj bq bk"
+            "judge judge judge judge";
+        /* 1 行の高さ ≒ ボタン幅 × 0.9 (44px 〜 88px) */
+        height: clamp(220px, (100vw - 30px) * 1.125, 440px);
+        min-height: 220px;
+        flex-shrink: 1;
+    }
+    .button, #buttonJudge {
+        width: auto;
+        height: auto;
+        font-size: min(320%, 11vw, 7.5vh);
+        line-height: 1;
+    }
+    #button1 { grid-area: b1; }
+    #button2 { grid-area: b2; }
+    #button3 { grid-area: b3; }
+    #button4 { grid-area: b4; }
+    #button5 { grid-area: b5; }
+    #button6 { grid-area: b6; }
+    #button7 { grid-area: b7; }
+    #button8 { grid-area: b8; }
+    #button9 { grid-area: b9; }
+    #button0 { grid-area: b0; }
+    #buttonT { grid-area: bt; }
+    #buttonJ { grid-area: bj; }
+    #buttonQ { grid-area: bq; }
+    #buttonK { grid-area: bk; }
+    #buttonClear { grid-area: ac; }
+    #buttonDelete { grid-area: bs; }
+    #buttonJudge { grid-area: judge; }
 }
